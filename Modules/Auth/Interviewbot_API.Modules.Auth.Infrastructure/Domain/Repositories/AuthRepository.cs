@@ -21,7 +21,7 @@ public class AuthRepository : IAuthRepository
             OtpId = new Guid(),
             UserId = user.Id,
             Code = new Random().Next(100000, 999999).ToString(),
-            ExpiryAt = DateTime.UtcNow.AddMinutes(5),
+            ExpireAt = DateTime.UtcNow.AddMinutes(5),
             OtpType = type
         };
 
@@ -33,12 +33,12 @@ public class AuthRepository : IAuthRepository
     {
         var otp = await _authContext.Otps.FirstOrDefaultAsync(o => o.UserId == userId && o.Code == otpCode);
 
-        if (otp != null && otp.ExpiryAt >= DateTime.UtcNow)
+        if (otp != null && otp.ExpireAt >= DateTime.UtcNow)
         {
             _authContext.Remove(otp);
             return true;
         }
-        else if (otp.ExpiryAt < DateTime.UtcNow)
+        else if (otp.ExpireAt < DateTime.UtcNow)
         {
             _authContext.Remove(otp);
             return false;

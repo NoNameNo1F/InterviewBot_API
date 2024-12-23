@@ -7,7 +7,7 @@ public class RefreshToken : Entity
     public Guid TokenId { get; set; }
     public string Secret { get; set; }
     public bool IsUsed { get; set; }
-    public DateTime ExpiryAt { get; set; }
+    public DateTime ExpireAt { get; set; }
     
     public Guid UserId { get; set; }
     public User User { get; set; }

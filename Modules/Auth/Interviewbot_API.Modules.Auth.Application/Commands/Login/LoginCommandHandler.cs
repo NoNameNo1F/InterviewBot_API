@@ -29,7 +29,7 @@ internal class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResponse
         if (await _tokenRepository.IsRefreshTokenExistsByUserIdAsync(user.Id))
         {
             var previousRefresh = await _tokenRepository.GetRefreshTokenByUserIdAsync(user.Id);
-            if (previousRefresh.ExpiryAt < DateTime.UtcNow)
+            if (previousRefresh.ExpireAt < DateTime.UtcNow)
             {
                 DateTime createdAt = DateTime.UtcNow;
                 var tokenId = Guid.NewGuid();
@@ -40,7 +40,7 @@ internal class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResponse
                     TokenId = tokenId,
                     Secret = refresh,
                     IsUsed = false,
-                    ExpiryAt = createdAt.AddMinutes((int)TokenLifeTimeDurations.RefreshLifeTimeDuration),
+                    ExpireAt = createdAt.AddMinutes((int)TokenLifeTimeDurations.RefreshLifeTimeDuration),
                     UserId = user.Id
                 });
                 return new LoginResponse(access, refresh);
@@ -59,7 +59,7 @@ internal class LoginCommandHandler : ICommandHandler<LoginCommand, LoginResponse
                 TokenId = tokenId,
                 Secret = refresh,
                 IsUsed = false,
-                ExpiryAt = createdAt.AddMinutes((int)TokenLifeTimeDurations.RefreshLifeTimeDuration),
+                ExpireAt = createdAt.AddMinutes((int)TokenLifeTimeDurations.RefreshLifeTimeDuration),
                 UserId = user.Id
             });
             return new LoginResponse(access, refresh);

@@ -8,7 +8,7 @@ public class Otp : Entity
     public int OtpType { get; set; }
     public string Code { get; set; }
     public bool IsUsed { get; set; }
-    public DateTime ExpiryAt { get; set; }
+    public DateTime ExpireAt { get; set; }
     
     public Guid UserId { get; set; }
     public User User { get; set; }
