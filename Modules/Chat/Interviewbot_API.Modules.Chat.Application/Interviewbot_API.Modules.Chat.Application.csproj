@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Commands\AskQuestion\" />
+      <Folder Include="Commands\CreateNewThread\" />
+      <Folder Include="Commands\ProcessingDocumentation\" />
+      <Folder Include="Commands\UpdateThreadName\" />
+      <Folder Include="Queries\GetMessagesByThreadIdPaging\" />
+      <Folder Include="Queries\GetMessagesByThreadId\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.11.0" />
+      <PackageReference Include="MediatR" Version="12.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\Interviewbot_API.BuildingBlocks.Application\Interviewbot_API.BuildingBlocks.Application.csproj" />
+      <ProjectReference Include="..\Interviewbot_API.Modules.Chat.Domain\Interviewbot_API.Modules.Chat.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
