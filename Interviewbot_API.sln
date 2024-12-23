@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.API", "API\Interviewbot_API.API\Interviewbot_API.API.csproj", "{052A9ED8-3217-4D4B-92C1-0C1E767E9A98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.BuildingBlocks.Domain", "BuildingBlocks\Interviewbot_API.BuildingBlocks.Domain\Interviewbot_API.BuildingBlocks.Domain.csproj", "{5FE6819A-9E2F-4138-995A-00EC2818640B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.BuildingBlocks.Infrastructure", "BuildingBlocks\Interviewbot_API.BuildingBlocks.Infrastructure\Interviewbot_API.BuildingBlocks.Infrastructure.csproj", "{F037F8AC-B167-42DD-8531-B2CA90D351E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.BuildingBlocks.Application", "BuildingBlocks\Interviewbot_API.BuildingBlocks.Application\Interviewbot_API.BuildingBlocks.Application.csproj", "{F2B899F9-A631-451E-A26A-BA1D34E5911B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1A6C3586-BD23-44F1-BA43-04F0AD657D0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{AEDCC8B8-B092-4E7B-A105-3960E3C59D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{3201F230-5613-4C28-A6A7-D0B52A0A0DFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{F5CCB0FD-1BB9-4251-8C45-6EBC65816210}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chat", "Chat", "{72423950-A1A9-46F2-9455-9C37CE99907B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.Modules.Chat.Domain", "Modules\Chat\Interviewbot_API.Modules.Chat.Domain\Interviewbot_API.Modules.Chat.Domain.csproj", "{1E862A4C-3C53-4295-8DD4-B9F9EF2C77B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.Modules.Chat.Application", "Modules\Chat\Interviewbot_API.Modules.Chat.Application\Interviewbot_API.Modules.Chat.Application.csproj", "{3CC34562-1451-499A-B3C4-164F6E0F52DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.Modules.Chat.Infrastructure", "Modules\Chat\Interviewbot_API.Modules.Chat.Infrastructure\Interviewbot_API.Modules.Chat.Infrastructure.csproj", "{43F6FEB8-E7A4-4B55-8ED6-4B28F3EA8C36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{8307EA0C-1AD7-4BB3-A7D6-2B8EFF51F4F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.Modules.Auth.Domain", "Modules\Auth\Interviewbot_API.Modules.Auth.Domain\Interviewbot_API.Modules.Auth.Domain.csproj", "{7BEF46A3-6F00-41EE-9E64-B48CF640CF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.Modules.Auth.Infrastructure", "Modules\Auth\Interviewbot_API.Modules.Auth.Infrastructure\Interviewbot_API.Modules.Auth.Infrastructure.csproj", "{28447673-CF55-40CF-BE3C-B7DD07BBBDFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interviewbot_API.Modules.Auth.Application", "Modules\Auth\Interviewbot_API.Modules.Auth.Application\Interviewbot_API.Modules.Auth.Application.csproj", "{A627FDB2-618C-4773-9E62-93351961E44C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{052A9ED8-3217-4D4B-92C1-0C1E767E9A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{052A9ED8-3217-4D4B-92C1-0C1E767E9A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{052A9ED8-3217-4D4B-92C1-0C1E767E9A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{052A9ED8-3217-4D4B-92C1-0C1E767E9A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE6819A-9E2F-4138-995A-00EC2818640B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE6819A-9E2F-4138-995A-00EC2818640B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE6819A-9E2F-4138-995A-00EC2818640B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE6819A-9E2F-4138-995A-00EC2818640B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F037F8AC-B167-42DD-8531-B2CA90D351E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F037F8AC-B167-42DD-8531-B2CA90D351E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F037F8AC-B167-42DD-8531-B2CA90D351E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F037F8AC-B167-42DD-8531-B2CA90D351E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2B899F9-A631-451E-A26A-BA1D34E5911B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2B899F9-A631-451E-A26A-BA1D34E5911B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2B899F9-A631-451E-A26A-BA1D34E5911B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2B899F9-A631-451E-A26A-BA1D34E5911B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E862A4C-3C53-4295-8DD4-B9F9EF2C77B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E862A4C-3C53-4295-8DD4-B9F9EF2C77B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E862A4C-3C53-4295-8DD4-B9F9EF2C77B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E862A4C-3C53-4295-8DD4-B9F9EF2C77B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CC34562-1451-499A-B3C4-164F6E0F52DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CC34562-1451-499A-B3C4-164F6E0F52DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CC34562-1451-499A-B3C4-164F6E0F52DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CC34562-1451-499A-B3C4-164F6E0F52DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F6FEB8-E7A4-4B55-8ED6-4B28F3EA8C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F6FEB8-E7A4-4B55-8ED6-4B28F3EA8C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F6FEB8-E7A4-4B55-8ED6-4B28F3EA8C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F6FEB8-E7A4-4B55-8ED6-4B28F3EA8C36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BEF46A3-6F00-41EE-9E64-B48CF640CF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BEF46A3-6F00-41EE-9E64-B48CF640CF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BEF46A3-6F00-41EE-9E64-B48CF640CF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BEF46A3-6F00-41EE-9E64-B48CF640CF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28447673-CF55-40CF-BE3C-B7DD07BBBDFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28447673-CF55-40CF-BE3C-B7DD07BBBDFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28447673-CF55-40CF-BE3C-B7DD07BBBDFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28447673-CF55-40CF-BE3C-B7DD07BBBDFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A627FDB2-618C-4773-9E62-93351961E44C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A627FDB2-618C-4773-9E62-93351961E44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A627FDB2-618C-4773-9E62-93351961E44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A627FDB2-618C-4773-9E62-93351961E44C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AEDCC8B8-B092-4E7B-A105-3960E3C59D7F} = {1A6C3586-BD23-44F1-BA43-04F0AD657D0C}
+		{052A9ED8-3217-4D4B-92C1-0C1E767E9A98} = {AEDCC8B8-B092-4E7B-A105-3960E3C59D7F}
+		{3201F230-5613-4C28-A6A7-D0B52A0A0DFA} = {1A6C3586-BD23-44F1-BA43-04F0AD657D0C}
+		{F2B899F9-A631-451E-A26A-BA1D34E5911B} = {3201F230-5613-4C28-A6A7-D0B52A0A0DFA}
+		{5FE6819A-9E2F-4138-995A-00EC2818640B} = {3201F230-5613-4C28-A6A7-D0B52A0A0DFA}
+		{F037F8AC-B167-42DD-8531-B2CA90D351E8} = {3201F230-5613-4C28-A6A7-D0B52A0A0DFA}
+		{F5CCB0FD-1BB9-4251-8C45-6EBC65816210} = {1A6C3586-BD23-44F1-BA43-04F0AD657D0C}
+		{72423950-A1A9-46F2-9455-9C37CE99907B} = {F5CCB0FD-1BB9-4251-8C45-6EBC65816210}
+		{1E862A4C-3C53-4295-8DD4-B9F9EF2C77B9} = {72423950-A1A9-46F2-9455-9C37CE99907B}
+		{3CC34562-1451-499A-B3C4-164F6E0F52DA} = {72423950-A1A9-46F2-9455-9C37CE99907B}
+		{43F6FEB8-E7A4-4B55-8ED6-4B28F3EA8C36} = {72423950-A1A9-46F2-9455-9C37CE99907B}
+		{8307EA0C-1AD7-4BB3-A7D6-2B8EFF51F4F4} = {F5CCB0FD-1BB9-4251-8C45-6EBC65816210}
+		{7BEF46A3-6F00-41EE-9E64-B48CF640CF33} = {8307EA0C-1AD7-4BB3-A7D6-2B8EFF51F4F4}
+		{28447673-CF55-40CF-BE3C-B7DD07BBBDFE} = {8307EA0C-1AD7-4BB3-A7D6-2B8EFF51F4F4}
+		{A627FDB2-618C-4773-9E62-93351961E44C} = {8307EA0C-1AD7-4BB3-A7D6-2B8EFF51F4F4}
+	EndGlobalSection
+EndGlobal
