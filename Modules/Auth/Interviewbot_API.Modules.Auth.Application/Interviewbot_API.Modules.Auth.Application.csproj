@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Commands\ForgotPassword\" />
+      <Folder Include="Commands\GetUserSettings\" />
+      <Folder Include="Commands\RefreshAccessToken\" />
+      <Folder Include="Commands\RemoveRefreshTokenExpired\" />
+      <Folder Include="Commands\UpdateUserSettings\" />
+      <Folder Include="Queries\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\BuildingBlocks\Interviewbot_API.BuildingBlocks.Application\Interviewbot_API.BuildingBlocks.Application.csproj" />
+      <ProjectReference Include="..\Interviewbot_API.Modules.Auth.Domain\Interviewbot_API.Modules.Auth.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.11.0" />
+      <PackageReference Include="MediatR" Version="12.4.1" />
+    </ItemGroup>
+
+</Project>
