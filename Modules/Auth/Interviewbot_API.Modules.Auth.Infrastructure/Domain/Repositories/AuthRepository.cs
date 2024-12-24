@@ -14,7 +14,7 @@ public class AuthRepository : IAuthRepository
         _authContext = authContext;
     }
     
-    public async Task<Otp> GenerateOtpAsync(User user, int type)
+    public async Task GenerateOtpAsync(User user, int otpType)
     {
         var otp = new Otp
         {
@@ -22,16 +22,20 @@ public class AuthRepository : IAuthRepository
             UserId = user.Id,
             Code = new Random().Next(100000, 999999).ToString(),
             ExpireAt = DateTime.UtcNow.AddMinutes(5),
-            OtpType = type
+            OtpType = otpType
         };
 
         await _authContext.Otps.AddAsync(otp);
-        return otp;
     }
 
-    public async Task<bool> ValidateOtpAsync(Guid userId, string otpCode)
+    public async Task<Otp> GetOtpByUserId(Guid userId, int otpType)
     {
-        var otp = await _authContext.Otps.FirstOrDefaultAsync(o => o.UserId == userId && o.Code == otpCode);
+        return await _authContext.Otps.FirstOrDefaultAsync(o => o.UserId == userId && o.OtpType == otpType);
+    }
+
+    public async Task<bool> ValidateOtpAsync(Guid userId, int otpType, string otpCode)
+    {
+        var otp = await _authContext.Otps.FirstOrDefaultAsync(o => o.UserId == userId && o.OtpType == otpType && o.Code == otpCode);
 
         if (otp != null && otp.ExpireAt >= DateTime.UtcNow)
         {
@@ -47,5 +51,11 @@ public class AuthRepository : IAuthRepository
         {
             return false;
         }
+    }
+
+    public Task RemoveOtpAsync(Otp otp)
+    {
+        _authContext.Otps.Remove(otp);
+        return Task.CompletedTask;
     }
 }

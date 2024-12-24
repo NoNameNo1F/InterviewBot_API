@@ -9,7 +9,6 @@ using Interviewbot_API.Modules.Auth.Infrastructure.Configuration.Crypto;
 using Interviewbot_API.Modules.Auth.Infrastructure.Configuration.Token;
 using Interviewbot_API.Modules.Chat.Infrastructure.Configuration.Chat;
 using Interviewbot_API.Modules.Chat.Infrastructure.Database;
-using Microsoft.Extensions.Options;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -4,7 +4,8 @@ namespace Interviewbot_API.Modules.Auth.Domain.Repositories;
 
 public interface IAuthRepository
 {
-    Task<Otp> GenerateOtpAsync(User user, int type);
-    Task<bool> ValidateOtpAsync(Guid userId, string otpCode);
-    
+    Task GenerateOtpAsync(User user, int otpType);
+    Task<bool> ValidateOtpAsync(Guid userId, int otpType, string otpCode);
+    Task<Otp> GetOtpByUserId(Guid userId, int otpType);
+    Task RemoveOtpAsync(Otp otp);
 }

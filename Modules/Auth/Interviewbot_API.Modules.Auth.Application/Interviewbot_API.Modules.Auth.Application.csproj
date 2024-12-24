@@ -7,9 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands\ForgotPassword\" />
       <Folder Include="Commands\GetUserSettings\" />
-      <Folder Include="Commands\RefreshAccessToken\" />
       <Folder Include="Commands\RemoveRefreshTokenExpired\" />
       <Folder Include="Commands\UpdateUserSettings\" />
       <Folder Include="Queries\" />

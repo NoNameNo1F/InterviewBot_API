@@ -3,8 +3,6 @@ using Asp.Versioning;
 using Interviewbot_API.API.Common;
 using Interviewbot_API.API.Modules.Auth.Dtos;
 using Interviewbot_API.Modules.Auth.Application.Commands;
-using Interviewbot_API.Modules.Auth.Application.Commands.CreateUser;
-using Interviewbot_API.Modules.Auth.Application.Commands.Logout;
 using Interviewbot_API.Modules.Auth.Application.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -41,15 +39,18 @@ public class AuthController : ControllerBase
     }
     [Authorize]
     [HttpPost("logout")]
-    public async Task<IActionResult> Logout(LogoutRequestDto request)
+    public async Task<IActionResult> Logout([FromBody] LogoutRequestDto request)
     {
-        // string refreshToken = _httpContextAccessor.HttpContext.Request.Cookies["refresh"];
         string accessToken = _httpContextAccessor.HttpContext.Request.Headers["Authorization"]!;
         await _authModule.ExecuteCommandAsync(new LogoutCommand(request.UserId, accessToken));
-        return Ok(new ApiResponse { StatusCode = HttpStatusCode.OK, Result = "Logged out successfully" });
+        
+        return Ok(new ApiResponse
+        {
+            StatusCode = HttpStatusCode.OK,
+            Result = "Logged out successfully"
+        });
     }
     
-    // Register User Account [POST]
     [AllowAnonymous]
     [HttpPost("register")]
     public async Task<IActionResult> RegisterUser([FromBody] RegisterUserRequestDto request)
@@ -63,23 +64,48 @@ public class AuthController : ControllerBase
             request.RePassword));
         return Ok(new ApiResponse { StatusCode = HttpStatusCode.Created, Result = "Created User Successfully" });
     }
+    
     [AllowAnonymous]
     [HttpPost("reset-password")]
-    public async Task<IActionResult> ResetPassword(string email)
+    public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordRequestDto request)
     {
-        // await _authModule.ExecuteCommandAsync(new ResetPasswordCommand(email));
-        return Ok(new ApiResponse { StatusCode = HttpStatusCode.OK});
+        await _authModule.ExecuteCommandAsync(new ResetPasswordCommand(request.Email, request.NewPassword, request.ReNewPassword));
+        return Ok(new ApiResponse
+        {
+            StatusCode = HttpStatusCode.OK,
+            Result = "Password reset successfully! Please log in to continue!!!"
+        });
+    }
+
+    [AllowAnonymous]
+    [HttpPost("forgot-password")]
+    public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequestDto request)
+    {
+        await _authModule.ExecuteCommandAsync(new ForgotPasswordCommand(request.Email, request.OtpType));
+        
+        return Ok(new ApiResponse
+        {
+            StatusCode = HttpStatusCode.OK,
+            Result = "Otp was sent"
+        });
     }
     
-    // Forgot 
-    
-    // [AllowAnonymous]
-    // [HttpPost("token/refresh")]
-    // public async Task<IActionResult> CreateNewAccessToken()
-    // {
-    //     string refreshToken = _httpContextAccessor.HttpContext.Request.Cookies["refresh"];
-    //     var newAccessToken =
-    //         await _authModule.ExecuteCommandAsync(new CreateNewAccessTokenByRefreshTokenCommand(refreshToken));
-    //     return Ok(new ApiResponse { StatusCode = HttpStatusCode.OK, Result = newAccessToken });
-    // }
+    [Authorize]
+    [HttpPost("change-password")]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequestDto request)
+    {
+        await _authModule.ExecuteCommandAsync(
+            new ChangePasswordCommand(
+                request.Email,
+                request.OldPassword,
+                request.NewPassword, 
+                request.ReNewPassword
+            ));
+        
+        return Ok(new ApiResponse
+        {
+            StatusCode = HttpStatusCode.OK,
+            Result = "Password changed successfully! Please log in to continue!!!"
+        });
+    }
 }
